@@ -8,6 +8,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// Command is the command for ckill
 func Command() *cobra.Command {
 	var cmd = &cobra.Command{
 		Use:   "ckill <namespace> <label>",

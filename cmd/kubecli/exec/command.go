@@ -7,6 +7,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// Command is the command for exec
 func Command() *cobra.Command {
 	var cmd = &cobra.Command{
 		Use:   "exec <namespace> <label>",

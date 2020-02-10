@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// Command is the command for logs
 func Command() *cobra.Command {
 	var cmd = &cobra.Command{
 		Use:   "logs <namespace> <label>",
