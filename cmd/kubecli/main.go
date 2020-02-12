@@ -3,10 +3,11 @@ package main
 import (
 	"github.com/ansel1/merry"
 	"github.com/spf13/cobra"
-	"github.com/ssuareza/kubecli/cmd/kubecli/config"
-	"github.com/ssuareza/kubecli/cmd/kubecli/logs"
-	"github.com/ssuareza/kubecli/cmd/kubecli/exec"
 	"github.com/ssuareza/kubecli/cmd/kubecli/ckill"
+	"github.com/ssuareza/kubecli/cmd/kubecli/config"
+	"github.com/ssuareza/kubecli/cmd/kubecli/exec"
+	"github.com/ssuareza/kubecli/cmd/kubecli/get"
+	"github.com/ssuareza/kubecli/cmd/kubecli/logs"
 )
 
 var versionString = "dev"
@@ -25,6 +26,7 @@ func main() {
 	cmd.AddCommand(logs.Command())
 	cmd.AddCommand(exec.Command())
 	cmd.AddCommand(ckill.Command())
+	cmd.AddCommand(get.Command())
 
 	cmd.Execute()
 }
