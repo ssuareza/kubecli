@@ -65,13 +65,12 @@ func getObjects(namespace string, label string) {
 	}
 
 	if len(pods.Items) != 0 {
-		fmt.Printf("\n")
 		for _, pod := range pods.Items {
 			if pod.Labels["deploy"] == deploy {
 				if pod.Status.Phase == "Running" || pod.Status.Phase == "Succeeded" {
-					fmt.Printf(color.GreenString("pod/%s")+" %sstatus=%s\n", pod.Name, mapToString(pod.Labels), pod.Status.Phase)
+					fmt.Printf(color.GreenString("pod/%s")+" \t%sstatus:%s\n", pod.Name, mapToString(pod.Labels), pod.Status.Phase)
 				} else {
-					fmt.Printf(color.RedString("pod/%s")+" %sstatus=%s\n", pod.Name, mapToString(pod.Labels), pod.Status.Phase)
+					fmt.Printf(color.RedString("pod/%s")+" \t%sstatus:%s\n", pod.Name, mapToString(pod.Labels), pod.Status.Phase)
 				}
 				continue
 			}
